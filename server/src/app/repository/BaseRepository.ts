@@ -25,6 +25,10 @@ class RepositoryBase<T extends mongoose.Document> implements IRead<T>, IWrite<T>
         this._model.find({}, callback)
     }
 
+    retrieve_amount (_amount: number, callback: (error: any, result: any, amount: number) => void) {
+        this._model.find({}, callback).limit(Number(_amount))
+    }
+
     update (_id: mongoose.Types.ObjectId, item: T, callback: (error: any, result: any) => void) {
         this._model.update({_id: _id}, item, callback);
 

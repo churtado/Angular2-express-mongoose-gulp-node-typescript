@@ -6,11 +6,13 @@ import { HttpModule }     from '@angular/http';
 import { AppComponent }  from './app.component';
 import { routing }       from './app.routing';
 
+import { HomeComponent }      from './components/home/home.component';
 import { HeroesComponent }      from './components/heroes/heroes.component';
 import { DashboardComponent }   from './components/dashboard/dashboard.component';
 import { HeroDetailComponent }  from './components/heroDetail/hero-detail.component';
+import { CitationsComponent }  from './components/citations/citations.component';
 
-import { HeroService }  from './services/hero.service';
+import { CitationService }  from './services/citation.service';
 
 @NgModule({
   imports: [
@@ -21,12 +23,14 @@ import { HeroService }  from './services/hero.service';
     ],
   declarations: [
     AppComponent,
+    HomeComponent,
     HeroesComponent,
     DashboardComponent,
-    HeroDetailComponent
+    HeroDetailComponent,
+    CitationsComponent
   ],
   providers: [
-    HeroService
+    CitationService
   ],
   bootstrap: [AppComponent]
 })
